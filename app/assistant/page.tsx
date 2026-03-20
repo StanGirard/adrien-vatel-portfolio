@@ -24,7 +24,7 @@ export default function AssistantPage() {
 
       {/* Hero */}
       <section
-        className="min-h-[80vh] sm:min-h-screen grid grid-cols-1 md:grid-cols-2 items-end px-4 sm:px-6 md:px-12 pt-20 pb-8 sm:pb-10 md:pb-16 border-b-[3px] border-black"
+        className="min-h-0 sm:min-h-screen grid grid-cols-1 md:grid-cols-2 items-start sm:items-end px-4 sm:px-6 md:px-12 pt-[72px] sm:pt-20 pb-8 sm:pb-10 md:pb-16 border-b-[3px] border-black relative"
         style={{ background: "#FEF0F7" }}
       >
         <div>
@@ -52,6 +52,13 @@ export default function AssistantPage() {
             courts — de la préparation des rushes en documentaire à la gestion
             des workflows complexes de séries de plateforme.
           </p>
+        </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-1 animate-[fadeUp_0.8s_ease_0.8s_forwards] opacity-0">
+          <span className="font-mono text-[7px] tracking-[0.3em] uppercase text-light-gray">Scroll</span>
+          <svg className="w-4 h-4 text-light-gray animate-[scrollBounce_2s_ease-in-out_infinite]" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" />
+          </svg>
         </div>
       </section>
 

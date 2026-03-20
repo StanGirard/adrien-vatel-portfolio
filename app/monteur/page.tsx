@@ -31,7 +31,7 @@ export default function MonteurPage() {
       />
 
       {/* Hero */}
-      <section className="min-h-[80vh] sm:min-h-screen grid grid-cols-1 md:grid-cols-2 items-end px-4 sm:px-6 md:px-12 pt-20 pb-8 sm:pb-10 md:pb-16 bg-off-white border-b-[3px] border-black">
+      <section className="min-h-0 sm:min-h-screen grid grid-cols-1 md:grid-cols-2 items-start sm:items-end px-4 sm:px-6 md:px-12 pt-20 sm:pt-20 pb-8 sm:pb-10 md:pb-16 bg-off-white border-b-[3px] border-black relative">
         <div>
           <p
             className="font-mono text-[8px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-accent-yellow mb-3 sm:mb-4"
@@ -56,6 +56,13 @@ export default function MonteurPage() {
             Montage vidéo — reportages, émissions TV, brand content, courts
             métrages. De la capture à la livraison.
           </p>
+        </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-1 animate-[fadeUp_0.8s_ease_0.8s_forwards] opacity-0">
+          <span className="font-mono text-[7px] tracking-[0.3em] uppercase text-light-gray">Scroll</span>
+          <svg className="w-4 h-4 text-light-gray animate-[scrollBounce_2s_ease-in-out_infinite]" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" />
+          </svg>
         </div>
       </section>
 

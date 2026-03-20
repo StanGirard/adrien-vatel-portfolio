@@ -14,7 +14,7 @@ export function SubNav({ links, accentColor, bgColor = "#FAFAF8" }: SubNavProps)
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 h-[56px] sm:h-[60px] border-b-[3px] border-black"
-      style={{ background: bgColor }}
+      style={{ background: bgColor, "--accent": accentColor } as React.CSSProperties}
       aria-label="Navigation secondaire"
     >
       <div className="flex items-center gap-3 sm:gap-5 min-w-0">
@@ -36,15 +36,7 @@ export function SubNav({ links, accentColor, bgColor = "#FAFAF8" }: SubNavProps)
           <li key={link.href}>
             <a
               href={link.href}
-              className="text-[9px] tracking-[0.2em] uppercase text-gray no-underline transition-all px-5 h-[60px] flex items-center border-l-2 border-black hover:text-black"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = `${accentColor}15`;
-                e.currentTarget.style.color = "#0A0A0A";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#666";
-              }}
+              className="text-[9px] tracking-[0.2em] uppercase text-gray no-underline transition-all px-5 h-[60px] flex items-center border-l-2 border-black hover:text-black hover:bg-[color-mix(in_srgb,var(--accent)_8%,transparent)]"
             >
               {link.label}
             </a>

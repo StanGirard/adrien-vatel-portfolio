@@ -23,35 +23,44 @@ export function MosaicCard({ film, onClick }: Props) {
         className="object-cover transition-all duration-500 ease-out saturate-[0.6] brightness-[0.85] group-hover:scale-105 group-hover:saturate-[0.2] group-hover:brightness-[0.4]"
         sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
       />
-      {/* Hover overlay */}
-      <div className="absolute inset-0 p-3 sm:p-4 md:p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/95 via-black/85 to-black/60">
-        <div className="flex flex-col gap-1.5 sm:gap-2.5">
+      {/* Mobile always-visible title bar */}
+      <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/85 via-black/50 to-transparent pointer-events-none md:hidden">
+        <div className="font-condensed text-sm font-black text-white leading-none uppercase tracking-tight">
+          {film.title}
+        </div>
+        <div className="font-mono text-[6px] tracking-[0.15em] uppercase text-accent-yellow mt-1">
+          {film.role}
+        </div>
+      </div>
+      {/* Desktop hover overlay */}
+      <div className="absolute inset-0 p-6 flex-col justify-end transition-opacity duration-300 bg-gradient-to-t from-black/95 via-black/85 to-black/60 hidden md:flex opacity-0 group-hover:opacity-100">
+        <div className="flex flex-col gap-2.5">
           {/* Badges */}
-          <div className="flex items-center gap-1 sm:gap-1.5 flex-wrap">
-            <span className="font-mono text-[6px] sm:text-[7px] tracking-[0.15em] sm:tracking-[0.2em] uppercase px-1.5 sm:px-2 py-0.5 bg-accent-yellow text-black font-bold">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span className="font-mono text-[7px] tracking-[0.2em] uppercase px-2 py-0.5 bg-accent-yellow text-black font-bold">
               {film.badges.platform}
             </span>
-            <span className="font-mono text-[6px] sm:text-[7px] tracking-[0.15em] sm:tracking-[0.2em] uppercase px-1.5 sm:px-2 py-0.5 border border-white/30 text-white/70">
+            <span className="font-mono text-[7px] tracking-[0.2em] uppercase px-2 py-0.5 border border-white/30 text-white/70">
               {film.badges.type}
             </span>
           </div>
 
           {/* Title */}
-          <div className="font-condensed text-base sm:text-lg md:text-[22px] font-black text-white leading-none uppercase tracking-tight">
+          <div className="font-condensed text-[22px] font-black text-white leading-none uppercase tracking-tight">
             {film.title}
           </div>
 
           {/* Divider */}
-          <div className="w-5 sm:w-6 h-px bg-accent-yellow my-0.5" />
+          <div className="w-6 h-px bg-accent-yellow my-0.5" />
 
-          {/* Meta - hidden on very small screens */}
-          <div className="hidden sm:flex flex-col gap-1">
+          {/* Meta */}
+          <div className="flex flex-col gap-1">
             {film.meta.slice(0, 3).map((m) => (
               <div key={m.label} className="flex gap-1.5 items-baseline">
-                <span className="font-mono text-[6px] sm:text-[7px] tracking-[0.12em] uppercase text-white/50 whitespace-nowrap min-w-[40px] sm:min-w-[52px]">
+                <span className="font-mono text-[7px] tracking-[0.12em] uppercase text-white/50 whitespace-nowrap min-w-[52px]">
                   {m.label}
                 </span>
-                <span className="text-[9px] sm:text-[10px] text-white/85 leading-snug tracking-wide line-clamp-1">
+                <span className="text-[10px] text-white/85 leading-snug tracking-wide line-clamp-1">
                   {m.value}
                 </span>
               </div>
@@ -59,8 +68,8 @@ export function MosaicCard({ film, onClick }: Props) {
           </div>
 
           {/* Role */}
-          <div className="mt-1 sm:mt-2 pt-1 sm:pt-2 border-t border-white/10">
-            <span className="font-mono text-[6px] sm:text-[7px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-accent-yellow">
+          <div className="mt-2 pt-2 border-t border-white/10">
+            <span className="font-mono text-[7px] tracking-[0.2em] uppercase text-accent-yellow">
               {film.role}
             </span>
           </div>

@@ -36,13 +36,13 @@ export function HomeCards() {
           key={card.href}
           onClick={() => router.push(card.href)}
           aria-label={`Voir la section ${card.title}`}
-          className="home-card group relative bg-beige text-left flex flex-col justify-end px-5 sm:px-6 md:px-10 py-8 sm:py-10 md:py-12 min-h-[160px] sm:min-h-[180px] md:min-h-[280px] border-none cursor-pointer transition-colors duration-300"
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = card.hoverBg;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "#E8E4DC";
-          }}
+          className="home-card group relative bg-beige text-left flex flex-col justify-end px-5 sm:px-6 md:px-10 py-8 sm:py-10 md:py-12 min-h-[160px] sm:min-h-[180px] md:min-h-[280px] border-none cursor-pointer transition-colors duration-300 hover:bg-[var(--card-hover)] hover:text-[var(--card-hover-text)]"
+          style={
+            {
+              "--card-hover": card.hoverBg,
+              "--card-hover-text": card.hoverText,
+            } as React.CSSProperties
+          }
         >
           {/* Top accent bar */}
           <div
@@ -51,14 +51,14 @@ export function HomeCards() {
             aria-hidden="true"
           />
 
-          <div className="font-condensed text-[32px] sm:text-[40px] md:text-5xl font-black leading-[0.95] mb-3 sm:mb-4 uppercase tracking-tight transition-colors duration-300 text-black group-hover:text-current">
+          <div className="font-condensed text-[32px] sm:text-[40px] md:text-5xl font-black leading-[0.95] mb-3 sm:mb-4 uppercase tracking-tight transition-colors duration-300 text-black group-hover:text-[var(--card-hover-text)]">
             {card.title}
           </div>
-          <div className="text-[10px] sm:text-[11px] tracking-[0.08em] sm:tracking-[0.1em] leading-6 sm:leading-7 uppercase text-gray group-hover:text-current transition-colors duration-300 whitespace-pre-line">
+          <div className="text-[10px] sm:text-[11px] tracking-[0.08em] sm:tracking-[0.1em] leading-6 sm:leading-7 uppercase text-gray group-hover:text-[var(--card-hover-text)] transition-colors duration-300 whitespace-pre-line">
             {card.desc}
           </div>
           <div
-            className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 md:bottom-10 md:right-10 text-xl sm:text-[22px] text-light-gray group-hover:text-current group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+            className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 md:bottom-10 md:right-10 text-xl sm:text-[22px] text-light-gray group-hover:text-[var(--card-hover-text)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
             aria-hidden="true"
           >
             &#8599;

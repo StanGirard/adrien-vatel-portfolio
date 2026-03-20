@@ -34,18 +34,27 @@ export function ProjectCard({ project, onClick, overlayColor }: Props) {
           <path d="M8 5v14l11-7z" />
         </svg>
       </div>
-      {/* Overlay */}
-      <div
-        className="absolute inset-0 p-4 sm:p-7 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ background: overlayColor }}
-      >
-        <div className="font-mono text-[8px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-1.5 sm:mb-2 text-white/70">
-          {project.category}
-        </div>
-        <div className="font-condensed text-lg sm:text-2xl font-black leading-tight uppercase text-white">
+      {/* Mobile always-visible title bar */}
+      <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent pointer-events-none md:hidden">
+        <div className="font-condensed text-sm font-black leading-tight uppercase text-white">
           {project.title}
         </div>
-        <div className="mt-1 sm:mt-1.5 text-[9px] sm:text-[10px] tracking-wider text-white/70">
+        <div className="font-mono text-[7px] tracking-[0.15em] uppercase text-white/60 mt-0.5">
+          {project.category}
+        </div>
+      </div>
+      {/* Desktop hover overlay */}
+      <div
+        className="absolute inset-0 p-4 sm:p-7 flex-col justify-end transition-opacity duration-300 hidden md:flex opacity-0 group-hover:opacity-100"
+        style={{ background: overlayColor }}
+      >
+        <div className="font-mono text-[9px] tracking-[0.25em] uppercase mb-2 text-white/70">
+          {project.category}
+        </div>
+        <div className="font-condensed text-2xl font-black leading-tight uppercase text-white">
+          {project.title}
+        </div>
+        <div className="mt-1.5 text-[10px] tracking-wider text-white/70">
           {project.credits}
         </div>
       </div>
