@@ -24,18 +24,18 @@ export default function AssistantPage() {
 
       {/* Hero */}
       <section
-        className="min-h-screen grid grid-cols-1 md:grid-cols-2 items-end px-6 md:px-12 pt-20 pb-10 md:pb-16 border-b-[3px] border-black"
+        className="min-h-[80vh] sm:min-h-screen grid grid-cols-1 md:grid-cols-2 items-end px-4 sm:px-6 md:px-12 pt-20 pb-8 sm:pb-10 md:pb-16 border-b-[3px] border-black"
         style={{ background: "#FEF0F7" }}
       >
         <div>
           <p
-            className="font-mono text-[9px] tracking-[0.3em] uppercase text-accent-pink mb-4"
+            className="font-mono text-[8px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-accent-pink mb-3 sm:mb-4"
             style={{ animation: "fadeUp 0.8s ease 0.2s forwards", opacity: 0 }}
           >
             Assistant Monteur &middot; Paris
           </p>
           <h1
-            className="font-condensed text-[clamp(72px,9vw,140px)] font-black leading-[0.88] text-black tracking-tight uppercase"
+            className="font-condensed text-[clamp(48px,12vw,140px)] sm:text-[clamp(72px,9vw,140px)] font-black leading-[0.88] text-black tracking-tight uppercase"
             style={{ animation: "fadeUp 0.8s ease 0.35s forwards", opacity: 0 }}
           >
             Assistant
@@ -47,7 +47,7 @@ export default function AssistantPage() {
           className="flex flex-col justify-end pt-5 md:pb-1"
           style={{ animation: "fadeUp 0.8s ease 0.5s forwards", opacity: 0 }}
         >
-          <p className="text-[13px] text-gray max-w-[400px] leading-8 tracking-wide">
+          <p className="text-xs sm:text-[13px] text-gray max-w-[400px] leading-7 sm:leading-8 tracking-wide">
             Accompagnement technique en salle de montage sur formats longs et
             courts — de la préparation des rushes en documentaire à la gestion
             des workflows complexes de séries de plateforme.

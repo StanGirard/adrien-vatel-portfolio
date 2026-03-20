@@ -52,7 +52,7 @@ export default function MonteurPage() {
           className="flex flex-col justify-end pt-5 md:pb-1"
           style={{ animation: "fadeUp 0.8s ease 0.5s forwards", opacity: 0 }}
         >
-          <p className="text-[13px] text-gray max-w-[400px] leading-8 tracking-wide">
+          <p className="text-xs sm:text-[13px] text-gray max-w-[400px] leading-7 sm:leading-8 tracking-wide">
             Montage vidéo — reportages, émissions TV, brand content, courts
             métrages. De la capture à la livraison.
           </p>
