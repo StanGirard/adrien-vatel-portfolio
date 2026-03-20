@@ -15,7 +15,7 @@ export function AboutSection({ id, text, details, accentColor }: Props) {
     <RevealSection>
       <section
         id={id}
-        className="px-6 md:px-12 py-16 md:py-20 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-10 md:gap-20 items-start border-t-[3px] border-b-[3px] border-black"
+        className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 sm:gap-10 md:gap-20 items-start border-t-[3px] border-b-[3px] border-black"
       >
         <div>
           <p className="font-mono text-[9px] tracking-[0.35em] uppercase mb-6 text-gray">
@@ -31,7 +31,7 @@ export function AboutSection({ id, text, details, accentColor }: Props) {
             }}
           />
         </div>
-        <div className="grid grid-cols-2 gap-y-8 gap-x-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-8 gap-x-4 sm:gap-x-6">
           {details.map((d) => (
             <div key={d.label}>
               <p className="font-mono text-[9px] tracking-[0.25em] uppercase mb-2 text-light-gray">

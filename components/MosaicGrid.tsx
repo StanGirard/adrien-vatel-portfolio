@@ -16,11 +16,11 @@ export function MosaicGrid({ films }: Props) {
   return (
     <>
       <RevealSection>
-        <section id="a-filmo" className="px-6 md:px-12 pt-16 pb-20">
+        <section id="a-filmo" className="px-4 sm:px-6 md:px-12 pt-12 sm:pt-16 pb-12 sm:pb-20">
           <p className="font-mono text-[9px] tracking-[0.35em] uppercase mb-8 text-gray">
             Filmographie
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1.5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-1 sm:gap-1.5">
             {films.map((film) => (
               <MosaicCard
                 key={film.title}

@@ -7,7 +7,7 @@
   --color-accent-blue: #5BB5D5;
   --color-accent-yellow: #E8C32A;
   --color-accent-pink: #E2157A;
-  --color-gray: #888888;
+  --color-gray: #666666;
   --color-light-gray: #C8C4BC;
   --color-off-white: #FAFAF8;
   --color-pink-bg: #FEF0F7;
@@ -35,9 +35,27 @@ body {
   color: var(--color-black);
 }
 
-@media (pointer: fine) {
+@media (pointer: fine) and (hover: hover) {
   body {
     cursor: none;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

@@ -10,7 +10,7 @@ type Props = {
 export function FilmographyList({ id, title, items }: Props) {
   return (
     <RevealSection>
-      <section id={id} className="px-6 md:px-12 pb-20">
+      <section id={id} className="px-4 sm:px-6 md:px-12 pb-12 sm:pb-20">
         <p className="font-mono text-[9px] tracking-[0.35em] uppercase mb-8 text-gray">
           {title}
         </p>
@@ -18,10 +18,10 @@ export function FilmographyList({ id, title, items }: Props) {
           {items.map((item) => (
             <li
               key={item.title + item.year}
-              className="py-4 border-b-2 border-black/10 grid grid-cols-[1fr_auto] items-baseline gap-5"
+              className="py-3 sm:py-4 border-b-2 border-black/10 grid grid-cols-[1fr_auto] items-baseline gap-3 sm:gap-5"
             >
               <div>
-                <div className="font-condensed text-lg font-bold uppercase tracking-wide">
+                <div className="font-condensed text-base sm:text-lg font-bold uppercase tracking-wide">
                   {item.title}
                 </div>
                 <div className="text-[10px] mt-0.5 tracking-wider text-gray">
